@@ -16,13 +16,13 @@ export default function AuthProvider({children}){
 
     const fetchAlldata=(query)=>{
         setLoading(true)
-        fetchData(`search/?q=${query}`).then((res)=> {
-            setData(res)
+        fetchData(`search/?q=${query}`).then((contents)=> {
+            setData(contents)
             setLoading(false)
         })
     }
     return(
-        <AuthContext.Provider value={{loading,data,setValue}}>
+        <AuthContext.Provider value={{loading,data,value,setValue}}>
             {children}
         </AuthContext.Provider>
     )

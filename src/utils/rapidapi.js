@@ -1,20 +1,21 @@
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-const BASE_URL = "https://yt-api.p.rapidapi.com";
+const BASE_URL = "https://youtube138.p.rapidapi.com";
 
 const options = {
     headers: {
         'x-rapidapi-key': API_KEY,
-        'x-rapidapi-host': 'yt-api.p.rapidapi.com',
+        'x-rapidapi-host': 'youtube138.p.rapidapi.com',
     },
     timeout: 10000,
 };
 
 export const fetchData = async (url) => {
     try {
-        console.log(`Using API Key: ${API_KEY}`);  // Verify API Key
-        console.log(`Requesting URL: ${BASE_URL}/${url}`);  // Verify URL
+        console.log("API Key:", API_KEY);  // Add this line here
+        console.log(`Using API Key: ${API_KEY}`);
+        console.log(`Requesting URL: ${BASE_URL}/${url}`);
 
         const { data } = await axios.get(`${BASE_URL}/${url}`, options);
         return data;
